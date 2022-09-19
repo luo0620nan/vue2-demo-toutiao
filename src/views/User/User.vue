@@ -36,7 +36,7 @@
     <van-cell-group class="action-card">
       <van-cell icon="edit" title="编辑资料" is-link />
       <van-cell icon="chat-o" title="小思同学" is-link />
-      <van-cell icon="warning-o" title="退出登录" is-link />
+      <van-cell icon="fail" title="退出登录" @click="backOut" />
     </van-cell-group>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       page: 1,
-      limit: 5
+      limit: 5,
     }
   },
   created() {
@@ -57,10 +57,15 @@ export default {
   },
   methods: {
     async initArticleList() {
-      console.log(111)
+      // console.log(111)
       const { data: res } = await getArticleListAPI(this.page, this.limit)
       console.log(res)
-    }
+    },
+    backOut() {
+      console.log(111)
+      localStorage.removeItem('token')
+      this.$router.push('/login')
+    },
   },
 }
 </script>

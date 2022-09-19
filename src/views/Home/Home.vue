@@ -97,9 +97,11 @@ export default {
       // 重新调用接口，渲染数据
       setTimeout(() => {
         Toast('刷新成功')
-        // this.isLoading = true
+        this.isLoading = false
+        this.page++
         this.initArticleList(true)
         if (this.finished === true) {
+          this.isLoading = false
           Toast('没有更多了')
         }
       }, 200)

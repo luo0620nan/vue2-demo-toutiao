@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+import './index.css'
 // 导入并安装 Vant 组件库
 import Vant from 'vant'
 import 'vant/lib/index.less'
