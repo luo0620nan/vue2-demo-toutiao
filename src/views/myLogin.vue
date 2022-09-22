@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <img src="@/assets/logo.png" alt="" />
+  <div>
+    <!-- <img src="@/assets/logo.png" alt="" /> -->
     <van-cell-group inset class="form">
       <van-form @submit="onSubmit">
         <van-field
@@ -54,16 +54,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.card {
-  margin-top: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  img {
-    width: 60px;
-    height: 60px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
+.form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
